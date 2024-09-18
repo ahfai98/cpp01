@@ -6,7 +6,7 @@
 #    By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 13:39:18 by jyap              #+#    #+#              #
-#    Updated: 2024/09/18 13:39:19 by jyap             ###   ########.fr        #
+#    Updated: 2024/09/18 13:46:57 by jyap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,14 @@ OBJ_DIR = obj/
 
 INC_DIR = inc/
 
-SRC_FILES	= main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
+SRC_FILES	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-NAME = zombie
+NAME = program
 
 CC = c++
 
