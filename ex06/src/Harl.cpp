@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:38:08 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:38:09 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 22:24:07 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ void	Harl::debug(void)
 
 void	Harl::info(void)
 {
-	std::cout << "[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn’t put enough bacon in my burger!\nIf you did, I wouldn’t be asking for more!" << std::endl;
+	std::cout << "[INFO]\nI cannot believe adding extra bacon costs more money.\nYou didn't put enough bacon in my burger!\nIf you did, I wouldn't be asking for more!" << std::endl;
 }
 
 void	Harl::warning(void)
 {
-	std::cout << "[WARNING]\nI think I deserve to have some extra bacon for free.\nI’ve been coming for years whereas you started working here since last month." << std::endl;
+	std::cout << "[WARNING]\nI think I deserve to have some extra bacon for free.\nI've been coming for years whereas you started working here since last month." << std::endl;
 }
 
 void	Harl::error(void)
@@ -60,19 +60,23 @@ void	Harl::complain(std::string level)
 	{
 		case(0):
 			(this->*functionPTRS[0])();
-			// __attribute__ ((fallthrough));// otherwise linux won't compile
+			std::cout << std::endl;
+			__attribute__ ((fallthrough));
 		case(1):
 			(this->*functionPTRS[1])();
-			// __attribute__ ((fallthrough));
+			std::cout << std::endl;
+			 __attribute__ ((fallthrough));
 		case(2):
 			(this->*functionPTRS[2])();
-			// __attribute__ ((fallthrough));
+			std::cout << std::endl;
+			__attribute__ ((fallthrough));
 		case(3):
 			(this->*functionPTRS[3])();
+			std::cout << std::endl;
 			break;
 
 		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl << std::endl;
 			break;
 	}
 }

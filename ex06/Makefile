@@ -6,7 +6,7 @@
 #    By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 13:38:19 by jyap              #+#    #+#              #
-#    Updated: 2024/09/18 13:48:01 by jyap             ###   ########.fr        #
+#    Updated: 2024/09/18 22:00:46 by jyap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-NAME = program
+NAME = harlFilter
 
 CC = c++
 
