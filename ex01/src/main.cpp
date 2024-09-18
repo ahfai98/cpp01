@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:36:26 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:36:29 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 14:17:53 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 int	main()
 {
 	Zombie	*horde;
-	int		zombieAmount = 10;
+	int		size;
 
-	horde = zombieHorde(zombieAmount, "Horde Member");
+	size = 10;
+	horde = zombieHorde(size, "Horde Member");
 	if (horde == NULL)
-		return (EXIT_FAILURE);
-	for (int i = 0; i < zombieAmount; ++i)
+		return (1);
+	for (int i = 0; i < size; i++)
 		horde[i].announce();
-	delete[] horde;
-	horde = zombieHorde(0, "Failed");
-	return (EXIT_SUCCESS);
+	delete [] horde;
+	//horde = zombieHorde(0, "Failed");
+	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:36:41 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:36:42 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 14:12:38 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie	*zombieHorde(int N, std::string name)
 {
 	if (N < 1)
 	{
-		std::cout << "A Horde can not contain less than 1 Zombie." << std::endl;
+		std::cout << "A horde must have at least 1 zombie." << std::endl;
 		return (NULL);
 	}
 	Zombie *horde = new Zombie[N];
@@ -26,7 +26,7 @@ Zombie	*zombieHorde(int N, std::string name)
 		std::cout << "Allocation of the horde failed." << std::endl;
 		return (NULL);
 	}
-	for (int i = 0; i <= N; i++)
+	for (int i = 0; i < N; i++)
 		horde[i].set_name(name);
 	return (horde);
 }

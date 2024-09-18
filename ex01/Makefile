@@ -6,7 +6,7 @@
 #    By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 13:36:50 by jyap              #+#    #+#              #
-#    Updated: 2024/09/18 13:36:53 by jyap             ###   ########.fr        #
+#    Updated: 2024/09/18 14:03:21 by jyap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ OBJ_DIR = obj/
 
 INC_DIR = inc/
 
-SRC_FILES	= main.cpp Zombie.cpp ZombieHorde.cpp
+SRC_FILES	= main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-NAME = zombiehorde
+NAME = program
 
 CC = c++
 

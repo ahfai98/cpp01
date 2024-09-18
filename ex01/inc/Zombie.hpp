@@ -6,12 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:40:11 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:40:38 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 14:15:14 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-// Header-protection
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
@@ -19,7 +18,6 @@
 #include <string>
 #include <iostream>
 
-// classes
 class Zombie
 {
 	private:
@@ -27,6 +25,7 @@ class Zombie
 	public:
 	// Constructors
 		Zombie();
+		Zombie(std::string name);
 	// Deconstructors
 		~Zombie();
 	// Public Methods
