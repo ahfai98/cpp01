@@ -24,7 +24,7 @@ OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-NAME = zombie
+NAME = program
 
 CC = c++
 
