@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:39:42 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:42:07 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 20:33:20 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,20 @@
 #ifndef HUMANB_HPP
 # define HUMANB_HPP
 
-// Includes
-#include <string>
-#include <iostream>
 #include "Weapon.hpp"
 
-// classes
-class HumanB
-{
-	private:
-		std::string _name;
-		Weapon *_weapon;
-		bool _is_armed;
+class HumanB {
 	public:
-	// Constructor
-		HumanB(std::string name);
-	// Deconstructor
-		~HumanB(void);
-	// Getter
+		HumanB();
+		HumanB(const std::string name);
+		~HumanB();
 
-	// Setter
-		void setWeapon(Weapon &weapon);
-	// Public Methods
-		void attack(void);
+		void setWeapon(Weapon& weapon);
+		void attack(void) const;
+
+	private:
+		std::string	name;
+		Weapon		*weapon;
 };
 
 #endif

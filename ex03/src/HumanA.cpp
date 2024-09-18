@@ -6,28 +6,20 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:39:22 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:39:23 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 20:48:35 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "HumanA.hpp"
 
-// Constructor
-HumanA::HumanA(std::string name, Weapon &weapon):_weapon(weapon)
-{
-	this->_name = name;
-	std::cout << this->_name <<" joined the battlefield and grabbed a " << this->_weapon.getType() << " to fight." << std::endl;
-}
+#include <iostream>
 
-// Deconstructor
-HumanA::~HumanA(void)
-{
-    std::cout << this->_name << " died." << std::endl;
-}
+// HumanA::HumanA() {} <- this will cause a compilation error
+//HumanA::HumanA(const std::string& name, Weapon& weapon) : name(name), weapon(weapon){}
 
-// Public Methods
-void HumanA::attack(void)
-{
-    std::cout << this->_name << " attacks with his " << this->_weapon.getType() << "." << std::endl;
-}
+HumanA::~HumanA(){}
+
+void HumanA::attack(void) const { std::cout << name << " attacks with a " << weapon.getType() << "." <<  std::endl;}
+
+HumanA::HumanA(const std::string& name, Weapon& weapon) : name(name), weapon(weapon){}
