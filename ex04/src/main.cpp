@@ -5,80 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 13:39:09 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:39:11 by jyap             ###   ########.fr       */
+/*   Created: 2024/09/18 21:09:55 by jyap              #+#    #+#             */
+/*   Updated: 2024/09/18 21:24:59 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <iostream>
-#include <string>
 #include <fstream>
-#include <cstdio>
-#include <cstdlib>
+#include <iostream>
 
-std::string my_replace(std::string buffer, const std::string search, const std::string replace)
+int	replace(char **argv, std::string str)
 {
-	size_t	erase_length = search.length();
-	size_t	replace_length = replace.length();
-	size_t	pos_search = 0;
+	std::ofstream	outfile;
+	int				pos;
 
-	pos_search = buffer.find(search);
-	while (pos_search != std::string::npos)
+	outfile.open((std::string(argv[1]) + ".replace").c_str());
+	if (outfile.fail())
+		return (1);
+	for (int i = 0; i < (int)str.size(); i++)
 	{
-		buffer.erase(pos_search, erase_length);
-		buffer.insert(pos_search, replace);
-		pos_search = buffer.find(search, pos_search + replace_length);
-	}
-	return (buffer);
-}
-
-int main(int argc, char **argv)
-{
-	if (argc != 4)
-	{
-		std::cout << "wrong number of arguments" << std::endl <<
-		"Usage:\t./replace <file_name> <search> <replace>" << std::endl;
-	}
-	else
-	{
-		const std::string filename = argv[1];
-		const std::string	search = argv[2];
-		const std::string	replace = argv[3];
-		std::string			buffer;
-		std::ifstream		infile;
-		std::ofstream		outfile;
-
-		infile.open(argv[1]);
-		if (infile.is_open() == true)
+		pos = str.find(argv[2], i);
+		if (pos != -1 && pos == i)
 		{
-			outfile.open(filename + ".replace", std::ios::out | std::ios::trunc ); //only works on macOS with the +, to make it work on Linux, comment out "filename +"
-			if (outfile.is_open() == true)
-			{
-				while (std::getline(infile, buffer))
-				{
-					buffer = my_replace(buffer, search, replace);
-					outfile << buffer;
-					if (infile.peek() != EOF)
-						outfile << std::endl;
-				}
-				outfile.close();
-			}
-			else
-			{
-				std::perror("Outfile Error");
-				infile.close();
-				return (EXIT_FAILURE);
-			}
-			infile.close();
+			outfile << argv[3];
+			i += std::string(argv[2]).size() - 1;
 		}
 		else
-		{
-			std::perror("Infile Error");
-			std::cout << "Outfile not created or truncated." << std::endl;
-			return (EXIT_FAILURE);
-		}
-		return (EXIT_SUCCESS);
+			outfile << str[i];
 	}
-	return (EXIT_FAILURE);
+	outfile.close();
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	char			c;
+	std::ifstream	infile;
+	std::string		str;
+
+	if (argc != 4)
+	{
+		std::cout << "usage: replace <file> old_word new_word" << std::endl;
+		return (1);
+	}
+	infile.open(argv[1]);
+	if (infile.fail())
+	{
+		std::cout << "Error: " << argv[1] << ":" <<
+		" no such file or directory" << std::endl;
+		return (1);
+	}
+	while(!infile.eof() && infile >> std::noskipws >> c)
+		str += c;
+	infile.close();
+	return (replace(argv, str));
 }
