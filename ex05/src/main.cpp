@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:38:53 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:38:54 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/18 21:51:42 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int main()
 		getline(std::cin, input);
 		if (std::cin.eof() == true)
 		{
-			std::cerr << "^D" << std::endl;
-			exit(EXIT_FAILURE);
+			std::cerr << "You pressed ^D. Harl approves of you quitting." << std::endl;
+			exit(1);
 		}
 		harl.complain(input);
 		std::cout << std::endl;
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
