@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 	 if (outfile.fail())
 	{
 		std::cout << "Error: Could not open output file for writing." << std::endl;
+		infile.close();
 		return (1);
 	}
 	while (std::getline(infile, line))
