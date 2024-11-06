@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Zombie.hpp"
 
 // Constructor
-Zombie::Zombie(std::string s)
+Zombie::Zombie(std::string s): _name(s)
 {
-	this->_name = s;
 	std::cout << this->_name << " spawned.\n" << std::endl;
 }
 
@@ -28,7 +26,7 @@ Zombie::~Zombie()
 
 // Public Methods
 
-void	Zombie::announce(void) const
+void	Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
 }

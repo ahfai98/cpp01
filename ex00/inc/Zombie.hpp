@@ -27,7 +27,7 @@ class Zombie
 	// Deconstructors
 		~Zombie();
 	// Public Methods
-		void	announce(void)const;
+		void	announce(void);
 
 };
 
