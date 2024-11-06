@@ -13,38 +13,36 @@
 #include <fstream>
 #include <iostream>
 
-int	replace(char **argv, std::string str)
+int	replace(char **argv, std::string &line, std::ofstream &outfile)
 {
-	std::ofstream	outfile;
-	int				pos;
+	size_t	start = 0;
+	size_t	pos;
 
-	outfile.open((std::string(argv[1]) + ".replace").c_str());
-	if (outfile.fail())
-		return (1);
-	for (int i = 0; i < (int)str.size(); i++)
+	while ((pos = line.find(argv[2], start)) != std::string::npos)
 	{
-		pos = str.find(argv[2], i);
-		if (pos != -1 && pos == i)
-		{
-			outfile << argv[3];
-			i += std::string(argv[2]).size() - 1;
-		}
-		else
-			outfile << str[i];
+		outfile << line.substr(start, pos - start);
+		outfile << argv[3];
+		start = pos + std::string(argv[2]).size();
 	}
-	outfile.close();
+	outfile << line.substr(start);
+	outfile << '\n';
 	return (0);
 }
 
 int	main(int argc, char **argv)
 {
-	char			c;
 	std::ifstream	infile;
-	std::string		str;
+	std::ofstream	outfile;
+	std::string		line;
 
 	if (argc != 4)
 	{
 		std::cout << "usage: replace <file> old_word new_word" << std::endl;
+		return (1);
+	}
+	if (std::string(argv[2]).empty())
+	{
+		std::cout << "Error: old_word cannot be empty." << std::endl;
 		return (1);
 	}
 	infile.open(argv[1]);
@@ -54,8 +52,15 @@ int	main(int argc, char **argv)
 		" no such file or directory" << std::endl;
 		return (1);
 	}
-	while(!infile.eof() && infile >> std::noskipws >> c)
-		str += c;
+	outfile.open((std::string(argv[1]) + ".replace").c_str());
+	 if (outfile.fail())
+	{
+		std::cout << "Error: Could not open output file for writing." << std::endl;
+		return (1);
+	}
+	while (std::getline(infile, line))
+		replace(argv, line, outfile);
 	infile.close();
-	return (replace(argv, str));
+	outfile.close();
+	return (0);
 }
