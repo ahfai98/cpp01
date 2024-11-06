@@ -16,14 +16,14 @@
 #include <iostream>
 
 HumanB::HumanB(){}
-HumanB::HumanB(const std::string name) : name(name), weapon(NULL){}
+HumanB::HumanB(const std::string& name) : _name(name), _weapon(NULL){}
 HumanB::~HumanB(){}
 
-void HumanB::setWeapon(Weapon& weapon) { this->weapon = &weapon; }
+void HumanB::setWeapon(Weapon& weapon) { _weapon = &weapon; }
 void HumanB::attack(void) const 
 {
-	if (this->weapon == NULL)
-		std::cout << name << " attacks with their fist." << std::endl; 
+	if (_weapon == NULL)
+		std::cout << _name << " attacks without a weapon." << std::endl; 
 	else
-	 	std::cout << name << " attacks with a " << weapon->getType() << "." << std::endl; 
+	 	std::cout << _name << " attacks with " << _weapon->getType() << "." << std::endl; 
 }

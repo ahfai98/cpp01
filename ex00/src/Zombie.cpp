@@ -15,18 +15,18 @@
 // Constructor
 Zombie::Zombie(std::string s): _name(s)
 {
-	std::cout << this->_name << " spawned.\n" << std::endl;
+	std::cout <<_name << " spawned.\n" << std::endl;
 }
 
 // Deconstructor
 Zombie::~Zombie()
 {
-	std::cout << this->_name << " died.\n"  << std::endl;
+	std::cout << _name << " died.\n"  << std::endl;
 }
 
 // Public Methods
 
 void	Zombie::announce(void)
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
 }

@@ -28,7 +28,7 @@ class Weapon
 		void  setType(const std::string& type);
 
 	private:
-		std::string type;
+		std::string _type;
 };
 
 #endif

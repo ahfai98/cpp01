@@ -20,23 +20,23 @@ Zombie::Zombie(): _name("Default")
 
 Zombie::Zombie(std::string name): _name(name)
 {
-	std::cout << "Zombie " << this->_name << " spawned.\n" << std::endl;
+	std::cout << "Zombie " << _name << " spawned.\n" << std::endl;
 }
 
 // Deconstructor
 Zombie::~Zombie()
 {
-	std::cout << this->_name << " died.\n"  << std::endl;
+	std::cout << _name << " died.\n"  << std::endl;
 }
 
 // Public Methods
 
 void	Zombie::announce(void)
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
+	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
 }
 
 void	Zombie::set_name(std::string name)
 {
-	this->_name = name;
+	_name = name;
 }
