@@ -47,7 +47,8 @@ void	Harl::error(void)
 // Public Methods
 void	Harl::complain(std::string level)
 {
-	void	(Harl::*functionPTRS[])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void	(Harl::*functionPTRS[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	
 	std::string complains[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++)
