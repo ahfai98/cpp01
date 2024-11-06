@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
 // includes
 #include <string>
 #include <iostream>
+#include <sstream>
 
 class Zombie
 {
@@ -29,7 +29,7 @@ class Zombie
 	// Deconstructors
 		~Zombie();
 	// Public Methods
-		void	announce(void)const;
+		void	announce(void);
 		void	set_name(std::string name);
 };
 

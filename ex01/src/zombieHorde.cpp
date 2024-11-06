@@ -27,6 +27,11 @@ Zombie	*zombieHorde(int N, std::string name)
 		return (NULL);
 	}
 	for (int i = 0; i < N; i++)
-		horde[i].set_name(name);
+	{
+		std::ostringstream oss;
+		oss << name << i + 1;
+		horde[i].set_name(oss.str());
+		//horde[i].set_name(name);
+	}
 	return (horde);
 }

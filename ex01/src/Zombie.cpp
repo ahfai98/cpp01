@@ -10,19 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Zombie.hpp"
 
 // Constructor
-Zombie::Zombie()
+Zombie::Zombie(): _name("Default")
 {
-	this->_name = "(Unknown)";
-	std::cout << "Zombie " << this->_name << " spawned.\n" << std::endl;
+	std::cout << "Default Zombie spawned.\n" << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name): _name(name)
 {
-	this->_name = name;
 	std::cout << "Zombie " << this->_name << " spawned.\n" << std::endl;
 }
 
@@ -34,7 +31,7 @@ Zombie::~Zombie()
 
 // Public Methods
 
-void	Zombie::announce(void) const
+void	Zombie::announce(void)
 {
 	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...\n" << std::endl;
 }
