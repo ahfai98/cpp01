@@ -6,10 +6,9 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:36:41 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 14:12:38 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 15:28:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Zombie.hpp"
 
@@ -31,7 +30,6 @@ Zombie	*zombieHorde(int N, std::string name)
 		std::ostringstream oss;
 		oss << name << i + 1;
 		horde[i].set_name(oss.str());
-		//horde[i].set_name(name);
 	}
 	return (horde);
 }

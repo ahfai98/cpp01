@@ -6,12 +6,10 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:39:46 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 20:24:46 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 15:37:31 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// Header-protection
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
@@ -21,11 +19,11 @@ class Weapon
 {
 	public:
 		Weapon();
-		Weapon(const std::string& type);
+		Weapon(const std::string &type);
 		~Weapon();
 
-		const std::string& getType(void) const;
-		void  setType(const std::string& type);
+		const std::string &getType(void) const;
+		void  setType(const std::string &type);
 
 	private:
 		std::string _type;

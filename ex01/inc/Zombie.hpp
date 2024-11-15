@@ -6,14 +6,13 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:40:11 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 14:15:14 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 15:24:13 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-// includes
 #include <string>
 #include <iostream>
 #include <sstream>
