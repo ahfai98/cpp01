@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:16:51 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 13:29:57 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 15:23:27 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 // Constructor
 Zombie::Zombie(std::string s): _name(s)
 {
-	std::cout <<_name << " spawned.\n" << std::endl;
+	std::cout << "(Zombie)" <<_name << " spawned.\n" << std::endl;
 }
 
 // Deconstructor
 Zombie::~Zombie()
 {
-	std::cout << _name << " died.\n"  << std::endl;
+	std::cout << "(Zombie)" << _name << " destroyed.\n"  << std::endl;
 }
 
 // Public Methods
