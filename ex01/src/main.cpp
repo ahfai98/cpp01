@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:36:26 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 15:30:33 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/03 15:42:14 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ int	main()
 		horde[i].announce();
 	delete[] horde;
 	horde = zombieHorde(0, "Failed");
+	if (horde == NULL)
+		return (1);
+	delete[] horde;
 	return (0);
 }
