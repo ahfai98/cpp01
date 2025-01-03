@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:37:42 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 14:38:53 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/03 15:45:19 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int main()
 
 	std::cout << std::endl;
 
-	std::cout << "Value of string:\t\t" << string <<std::endl;
-	std::cout << "Value pointed to by stringPTR:\t" << *stringPTR <<std::endl;
-	std::cout << "Value of stringREF:\t\t" << stringREF <<std::endl;
+	std::cout << "Value of string:\t\t" << string << std::endl;
+	std::cout << "Value pointed to by stringPTR:\t" << *stringPTR << std::endl;
+	std::cout << "Value of stringREF:\t\t" << stringREF << std::endl;
 
 	return (0);
 }
