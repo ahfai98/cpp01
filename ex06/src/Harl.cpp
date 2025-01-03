@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 13:38:08 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 17:14:43 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/03 19:17:26 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,20 @@ void Harl::complain(std::string level)
 			switch (i)
 			{
 				case 0:
-					(this->*harl_funcs[0])();
-					(this->*harl_funcs[1])();
-					(this->*harl_funcs[2])();
-					(this->*harl_funcs[3])();
+					for (int j = i; j < 4; j++)
+                		(this->*harl_funcs[j])();
 					break;
 				case 1:
-					(this->*harl_funcs[1])();
-					(this->*harl_funcs[2])();
-					(this->*harl_funcs[3])();
+					for (int j = i; j < 4; j++)
+                		(this->*harl_funcs[j])();
 					break;
 				case 2:
-					(this->*harl_funcs[2])();
-					(this->*harl_funcs[3])();
+					for (int j = i; j < 4; j++)
+                		(this->*harl_funcs[j])();
 					break;
 				case 3:
-					(this->*harl_funcs[3])();
+					for (int j = i; j < 4; j++)
+                		(this->*harl_funcs[j])();
 					break;
 				default:
 					break;

@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 21:09:55 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/18 21:24:59 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/03 18:59:20 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	replace(char **argv, std::string &line, std::ofstream &outfile)
 	size_t	start = 0;
 	size_t	pos;
 
+	//find position of old_word
 	while ((pos = line.find(argv[2], start)) != std::string::npos)
 	{
+		//output everything before the old_word
 		outfile << line.substr(start, pos - start);
-		outfile << argv[3];
-		start = pos + std::string(argv[2]).size();
+		outfile << argv[3]; //input new_word
+		start = pos + std::string(argv[2]).size(); //skip to after old_word
 	}
 	outfile << line.substr(start);
 	outfile << '\n';
@@ -40,7 +42,7 @@ int	main(int argc, char **argv)
 		std::cout << "usage: replace <file> old_word new_word" << std::endl;
 		return (1);
 	}
-	if (std::string(argv[2]).empty())
+	if (argv[2][0] == '\0')
 	{
 		std::cout << "Error: old_word cannot be empty." << std::endl;
 		return (1);
